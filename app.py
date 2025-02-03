@@ -56,7 +56,7 @@ def generate_pdf(patient_name, patient_age, patient_gender, results, history):
     pdf.add_page()
     
     # --- Patient Details ---
-    pdf.set_font("Arial", style='B', size=16)
+    pdf.set_font("Times New Roman", style='B', size=16)
     pdf.cell(0, 10, "Oral Cancer Detection Report", ln=True, align='L')
     pdf.ln(5)
     
@@ -186,4 +186,4 @@ if history:
                                         go.Scatter(x=df["Epoch"], y=df["Validation Loss"], mode='lines+markers', name="Validation Loss", line=dict(dash='dash'))]), use_container_width=True)
 
 st.markdown("---")
-st.write("Developed with ❤️ using Streamlit & TensorFlow.")
+st.write("This is an early awareness application and NOT medical advice, seek professional help if you think you're at risk.")
