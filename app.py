@@ -52,7 +52,7 @@ def round_corners(im, radius=40):
 
 # --- UI Layout ---
 st.title("🩺 Oral Cancer Detection App")
-st.write("Upload images to analyze oral lesions and predict their likelihood of being cancerous. Enter patient information in the sidebar to generate report. Prediction results and confidence level will be provided after image file upload. Scroll down to view model performance and interactive charts.")
+st.write("Upload images to analyse oral lesions and predict their likelihood of being cancerous. Enter patient information in the sidebar to generate report. Prediction results and confidence level will be provided after image upload. Scroll down to view model performance and interactive charts.")
 
 # --- Sidebar: Patient Information ---
 st.sidebar.header("📋 Patient Information")
