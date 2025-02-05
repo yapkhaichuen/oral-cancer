@@ -33,12 +33,22 @@ history = load_training_history()
 
 # --- Function to Predict Cancer ---
 def cancerPrediction(img):
+    # Loading Image
     img = img.resize((256, 256))
-    img_array = image.img_to_array(img) / 255.0
-    input_arr_img = np.expand_dims(img_array, axis=0)
-    probability = model.predict(input_arr_img)[0][0]
-    prediction = "Cancer" if probability < 0.5 else "Non-Cancer"
+    # Normalizing Image
+    norm_img = image.img_to_array(img)/255
+    # Converting Image to Numpy Array
+    input_arr_img = np.array([norm_img])
+    # Getting Probability Score from Model
+    probability = model.predict(input_arr_img)[0][0]  # Extract first value from batch
+    # Getting Predictions
+    prediction_raw = (model.predict(input_arr_img) > 0.5).astype(int)[0][0]
+    if prediction_raw == 0:
+        prediction = "Cancer"
+    else:
+        prediction = "Non-Cancer"
     return prediction, probability
+
 
 # --- Apple-Style Rounded Corners for Images ---
 def round_corners(im, radius=40):
