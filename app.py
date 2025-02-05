@@ -56,7 +56,7 @@ def generate_pdf(patient_name, patient_age, patient_gender, results, history):
     pdf.add_page()
     
     # --- Patient Details ---
-    pdf.set_font("Times", style='B', size=16)
+    pdf.set_font("Arial", style='B', size=16)
     pdf.cell(0, 10, "Oral Cancer Detection Report", ln=True, align='L')
     pdf.ln(5)
     
